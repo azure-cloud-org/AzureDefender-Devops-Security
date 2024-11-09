@@ -53,10 +53,13 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan 
+      if: github.event_name == 'pull request'
     
     - name: Run Microsoft Security DevOps
       uses: microsoft/security-devops-action@latest
       id: msdo
+      continue-on-error: false
+      
 
 
 ##terraform apply job only if terraform plan gets run successfully.
@@ -96,6 +99,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform apply
       run: terraform apply --auto-approve 
+      if: github.event_name == 'push'
       
 
 
