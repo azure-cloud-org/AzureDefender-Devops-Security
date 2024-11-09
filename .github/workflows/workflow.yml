@@ -60,6 +60,7 @@ jobs:
       id: msdo
       continue-on-error: false
       
+      
     # Generates an execution plan for Terraform
     - name: Terraform apply
       run: terraform apply --auto-approve 
