@@ -1,4 +1,5 @@
 
+/*
 # Create a resource group
 resource "azurerm_resource_group" "rg-defender-for-security" {
   name     = "myrg-defender-for-security"
@@ -48,3 +49,4 @@ resource "azurerm_subnet_network_security_group_association" "example-defender-f
   network_security_group_id = azurerm_network_security_group.example-defender-for-security.id
 }
 
+*/
