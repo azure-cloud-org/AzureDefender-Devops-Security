@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "rg-defender-for-security" {
 # Create Virtual Network
 resource "azurerm_virtual_network" "myvnet-defender-for-security" {
   name                = "myvnet-defender-for-security"
-  address_space       = ["10.5.0.0/24"]
+  address_space       = ["10.22.0.0/24"]
   location            = azurerm_resource_group.rg-defender-for-security.location
   resource_group_name = azurerm_resource_group.rg-defender-for-security.name
 
@@ -21,7 +21,7 @@ resource "azurerm_subnet" "mysubnet-defender-for-security" {
   name                 = "mysubnet-defender-for-security"
   resource_group_name  = azurerm_resource_group.rg-defender-for-security.name
   virtual_network_name = azurerm_virtual_network.myvnet-defender-for-security.name
-  address_prefixes     = ["10.5.0.0/27"]
+  address_prefixes     = ["10.22.0.0/27"]
 }
 
 ##creating allow all inbound firewall rule to verify synk SAST detection
