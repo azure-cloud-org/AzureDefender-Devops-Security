@@ -61,7 +61,7 @@ jobs:
 
 ##terraform apply job only if terraform plan gets run successfully.
   terraform_apply:
-    name: 'Terraform_apply'
+    name: 'Terraform_destroy'
     runs-on: ubuntu-latest
     needs: [terraform_plan]
     
@@ -94,8 +94,8 @@ jobs:
       
 
     # Generates an execution plan for Terraform
-    - name: Terraform apply
-      run: terraform apply --auto-approve 
+    - name: Terraform destroy
+      run: terraform destroy --auto-approve 
       
 
 
